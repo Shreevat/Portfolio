@@ -7,7 +7,7 @@ interface HeaderProps {
 
 function Header({ label, links }: HeaderProps) {
   return (
-    <header className="bg-teal-200 flex justify-between items-center py-4">
+    <header className="bg-cteal flex justify-between items-center py-4">
       <h1 className="text-2xl font-bold">{label}</h1>
       <nav>
         <ul className="flex space-x-4">

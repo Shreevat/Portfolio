@@ -5,7 +5,7 @@ interface FooterProps {
 
 function Footer({ links, contact }: FooterProps) {
   return (
-    <footer className="bg-red-200 flex justify-between items-center px-4 py-4">
+    <footer className="bg-dteal flex justify-between items-center px-4 py-4">
       <nav className="flex">
         <ul className="float-end">
           {links.map(({ name, href }) => (
