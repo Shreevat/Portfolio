@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark .header {
+  @apply bg-gray-800 text-gray-100;
+}
+
+.dark .footer {
+  @apply bg-gray-800 text-gray-100;
+} */
+
+body {
+  @apply  text-tertiary;
+}

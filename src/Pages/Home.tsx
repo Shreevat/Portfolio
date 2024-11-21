@@ -1,8 +1,9 @@
-import React from "react";
 import Header from "../components/header";
-import About from "./About"; // Import the new About component
+import About from "./About";
 import Footer from "../components/footer";
 import Skills from "../components/skillSection";
+import Gallery from "../components/Gallery";
+// import DarkModeToggle from "../components/DarkModeToggle";
 
 const Home = () => {
   const links = [
@@ -46,9 +47,11 @@ const Home = () => {
 
   return (
     <>
+      {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
       <Header label="My Portfolio" links={links} />
       <About src="Aboutme.jpg" alt="About Us" />
       <Skills skills={skills} />
+      <Gallery />
       <Footer links={links1} contact={contact} />
     </>
   );

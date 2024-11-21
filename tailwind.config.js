@@ -4,10 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        cteal: "#9CDBA6",
-        dteal: "#50B498",
-        eteal: "#468585",
+        primary: "#0AD0BC",
+        tertiary: "#FF725C",
+        secondary: "#FFCA47",
       },
+      fontFamily: {
+        "open-sans": ["Open Sans", "sans-serif"],
+        "hi-melody": ["Hi Melody", "sans-serif"],
+      },
+    },
+    darkMode: 'class', // Add this line
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['dark'],
+      textColor: ['dark'],
     },
   },
   plugins: [],
