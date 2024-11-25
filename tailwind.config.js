@@ -4,22 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0AD0BC",
-        tertiary: "#FF725C",
-        secondary: "#FFCA47",
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        tertiary: 'var(--tertiary)',
+      },
+      dark: {
+        colors: {
+          primary: 'var(--primary)',
+          secondary: 'var(--secondary)',
+          tertiary: 'var(--tertiary)',
+        },
       },
       fontFamily: {
         "open-sans": ["Open Sans", "sans-serif"],
         "hi-melody": ["Hi Melody", "sans-serif"],
       },
     },
-    darkMode: 'class', // Add this line
   },
-  variants: {
-    extend: {
-      backgroundColor: ['dark'],
-      textColor: ['dark'],
-    },
-  },
+  darkMode: 'class',
+  darkModeClass: 'dark-mode',
   plugins: [],
 };

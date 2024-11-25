@@ -1,5 +1,5 @@
 interface Skill {
-  image: string;
+  icon: JSX.Element;
   name: string;
 }
 
@@ -8,10 +8,10 @@ interface SkillsProps {
   className?: string;
 }
 
-const SkillSection = ({ image, name }: Skill) => (
-  <div className="skill-rectangle bg-secondary p-4 rounded-lg ">
-    <img src={image} alt={name} className="w-8 h-8 mx-auto" />
-    <p className="text-lg font-bold text-center">{name}</p>
+const SkillSection = ({ icon, name }: Skill) => (
+  <div className="skill-rectangle bg-tertiary p-4 rounded-lg flex items-center justify-center">
+    {icon}
+    <p className="text-lg font-bold">{name}</p>
   </div>
 );
 

@@ -3,7 +3,10 @@ import About from "./About";
 import Footer from "../components/footer";
 import Skills from "../components/skillSection";
 import Gallery from "../components/Gallery";
-// import DarkModeToggle from "../components/DarkModeToggle";
+import Projects from './Projects';
+
+import { FaReact, FaHtml5, FaCss3, FaNodeJs } from 'react-icons/fa';
+import { SiTailwindcss, SiUnity } from 'react-icons/si';// import DarkModeToggle from "../components/DarkModeToggle";
 
 const Home = () => {
   const links = [
@@ -18,40 +21,40 @@ const Home = () => {
   ];
   const skills = [
     {
-      image: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
-      name: "React?",
+      icon: <FaHtml5 size={24} />,
+      name: "HTML5",
     },
     {
-      image: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
-      name: "Node",
+      icon: <FaCss3 size={24} />,
+      name: "CSS3",
     },
     {
-      image: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
-      name: "Node",
+      icon: <FaNodeJs size={24} />,
+      name: "Node.js",
     },
     {
-      image: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
-      name: "React?",
+      icon: <SiTailwindcss size={24} />,
+      name: "Tailwind CSS",
     },
     {
-      image: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
-      name: "Node",
+      icon: <FaReact size={24} />,
+      name: "React",
     },
     {
-      image: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
-      name: "Node",
+      icon: <SiUnity size={24} />, // Add Unity icon
+      name: "Unity",
     },
-    // Add more skills as needed
   ];
   const contact = { contact: "9851230675" };
 
   return (
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
-      <Header label="My Portfolio" links={links} />
+      <Header label="Portfolio" links={links} />
       <About src="Aboutme.jpg" alt="About Us" />
       <Skills skills={skills} />
       <Gallery />
+      <Projects />
       <Footer links={links1} contact={contact} />
     </>
   );

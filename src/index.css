@@ -2,18 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .dark {
-  @apply bg-gray-900 text-gray-100;
-}
-
-.dark .header {
-  @apply bg-gray-800 text-gray-100;
-}
-
-.dark .footer {
-  @apply bg-gray-800 text-gray-100;
-} */
-
+/* src/index.css */
 body {
-  @apply  text-tertiary;
+  background-color: white;
+  color: black;
+  --primary: #0AD0BC;
+  --secondary: #ffca47;
+  --tertiary: #ffea00;
+
 }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  --primary: #333;
+  --secondary: #666;
+  --tertiary: #999;
+}
+
+/* ... */
