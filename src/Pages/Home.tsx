@@ -6,7 +6,9 @@ import Gallery from "../components/Gallery";
 import Projects from './Projects';
 
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiUnity } from 'react-icons/si';// import DarkModeToggle from "../components/DarkModeToggle";
+import { SiTailwindcss, SiUnity } from 'react-icons/si';
+import ame from "../assets/Images/Aboutme.jpg";
+
 
 const Home = () => {
   const links = [
@@ -51,7 +53,7 @@ const Home = () => {
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
       <Header label="Portfolio" links={links} />
-      <About src="Aboutme.jpg" alt="About Us" />
+      <About src={ame} alt="About Us" />
       <Skills skills={skills} />
       <Gallery />
       <Projects />

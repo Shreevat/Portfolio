@@ -1,27 +1,34 @@
+import ame from "../assets/Images/Aboutme.jpg" ;
+import ragnar from "../assets/Images/ragnar.jpg" ;
+import trio from "../assets/Images/trio.jpg" ;
+import saske from "../assets/Images/saske.jpg" ;
+import joy from "../assets/Images/Joy.jpg" ;
+import me from "../assets/Images/Me.jpg" ;
+
 const Gallery = () => {
   const galleryImages = [
     {
-      src: "Me.jpg",
+      src: me,
       alt: "alt",
     },
     {
-      src: "joy.jpg",
+      src: joy,
       alt: "alt",
     },
     {
-      src: "ragnar.jpg",
+      src: ragnar,
       alt: "alt",
     },
     {
-      src: "saske.jpg",
+      src: saske,
       alt: "alt",
     },
     {
-      src: "trio.jpg",
+      src: trio,
       alt: "alt",
     },
     {
-      src: "Aboutme.jpg",
+      src: ame,
       alt: "alt",
     },
     // Add more images as needed
