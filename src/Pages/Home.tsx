@@ -7,7 +7,7 @@ import Projects from './Projects';
 
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss, SiUnity } from 'react-icons/si';
-import ame from "../assets/Images/Aboutme.jpg";
+
 
 
 const Home = () => {
@@ -53,7 +53,7 @@ const Home = () => {
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
       <Header label="PORTFOLIO" links={links} />
-      <About src={ame} alt="About Us" />
+      <About/>
       <Skills skills={skills} />
       <Gallery />
       <Projects />
