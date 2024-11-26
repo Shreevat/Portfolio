@@ -7,7 +7,7 @@ interface FooterProps {
 
 function Footer({ links, contact }: FooterProps) {
   return (
-    <footer className="bg-teal-600 flex flex-col items-center py-8">
+    <footer className="bg-secondary flex flex-col items-center py-8">
       <div className="relative w-32 h-32  overflow-hidden bg-transparent mb-6">
         {/* Top-Left Quarter */}
         <a

@@ -52,7 +52,7 @@ const Home = () => {
   return (
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
-      <Header label="Portfolio" links={links} />
+      <Header label="PORTFOLIO" links={links} />
       <About src={ame} alt="About Us" />
       <Skills skills={skills} />
       <Gallery />

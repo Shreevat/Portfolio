@@ -4,6 +4,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 interface HeaderProps {
   label: string;
   links: { name: string; href: string }[];
+  classname?: string;
 }
 
 function Header({ label, links }: HeaderProps) {
@@ -38,7 +39,7 @@ function Header({ label, links }: HeaderProps) {
       </div>
 
       <h1 className="text-2xl font-bold text-[var(--text-color)] font-hi-melody">
-        {label}
+        <span className="text-tertiary">{label}</span>
       </h1>
       <nav>
         <ul className="flex space-x-4">

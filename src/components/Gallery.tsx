@@ -35,7 +35,7 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="mx-auto p-4 bg-secondary rounded-lg shadow-md">
+    <div className="mx-auto p-4 bg-secondary shadow-md">
       <h2 className="text-2xl font-bold mb-4 text-center text-primary">
         My Artwork
       </h2>
