@@ -1,6 +1,4 @@
-
-
-const Projects = () => {
+const Projects = () => { 
 const projects = [
   {
     title: "Baun",
@@ -22,7 +20,7 @@ const projects = [
 
   return (
     <div className="projects bg-primary flex flex-col items-center p-8">
-      <h2 className="text-2xl font-bold mb-8">Game Development Projects</h2>
+      <h2 className="text-2xl text-secondary font-bold mb-8">Game Development Projects</h2>
       <div className="grid grid-cols-2 gap-4">
         {projects.map((project, index) => (
           <div key={index} className="project bg-tertiary p-4 rounded-lg">
@@ -41,3 +39,5 @@ const projects = [
 };
 
 export default Projects;
+
+/******  6f70e475-d9c8-4c3b-8a00-054b98e692d0  *******/

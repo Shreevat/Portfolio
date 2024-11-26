@@ -3,12 +3,17 @@ import About from "./About";
 import Footer from "../components/footer";
 import Skills from "../components/skillSection";
 import Gallery from "../components/Gallery";
-import Projects from './Projects';
+import Projects from "./Projects";
 
-import { FaReact, FaHtml5, FaCss3, FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss, SiUnity } from 'react-icons/si';
-
-
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaNodeJs,
+  FaJs,
+  FaGitAlt,
+} from "react-icons/fa";
+import { SiTailwindcss, SiUnity, SiTypescript } from "react-icons/si";
 
 const Home = () => {
   const links = [
@@ -43,17 +48,29 @@ const Home = () => {
       name: "React",
     },
     {
-      icon: <SiUnity size={24} />, // Add Unity icon
+      icon: <SiUnity size={24} />,
       name: "Unity",
     },
+    {
+      icon: <FaJs size={24} />,
+      name: "JavaScript",
+    },
+    {
+      icon: <FaGitAlt size={24} />,
+      name: "Git",
+    },
+    {
+      icon: <SiTypescript size={24} />,
+      name: "Typescript",
+    },
   ];
-  const contact = { contact: "9851230675" };
+  const contact = { contact: "98########" };
 
   return (
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
       <Header label="PORTFOLIO" links={links} />
-      <About/>
+      <About />
       <Skills skills={skills} />
       <Gallery />
       <Projects />

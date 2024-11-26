@@ -47,7 +47,7 @@ function Footer({ links, contact }: FooterProps) {
         <ul className="flex space-x-6 mb-4">
           {links.map(({ name, href }) => (
             <li key={name}>
-              <a href={href} className="text-white hover:text-gray-300">
+              <a href={href} className="text-primary hover:text-gray-300">
                 {name}
               </a>
             </li>
@@ -55,7 +55,7 @@ function Footer({ links, contact }: FooterProps) {
         </ul>
 
         {/* Contact Information */}
-        <p className="text-white">{contact.contact}</p>
+        <p className="text-tertiary">{contact.contact}</p>
       </nav>
     </footer>
   );

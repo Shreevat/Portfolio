@@ -22,7 +22,7 @@ export default {
       },
       animation: {
         'shadow-slide': 'shadow-slide 4s linear infinite alternate',
-        'unique-typing': 'unique-typing 4s steps(41, end) 1s infinite, unique-blink 0.5s step-end infinite',
+        'unique-typing': 'unique-typing 4s steps(41, end) 3s infinite, unique-blink 0.5s step-end infinite',
       },
       keyframes: {
         'shadow-slide': {

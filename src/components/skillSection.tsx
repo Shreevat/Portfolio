@@ -9,7 +9,7 @@ interface SkillsProps {
 }
 
 const SkillSection = ({ icon, name }: Skill) => (
-  <div className="skill-rectangle bg-tertiary p-4 rounded-lg flex items-center justify-center">
+  <div className="skill-rectangle bg-tertiary p-4 rounded-lg flex flex-col items-center justify-center">
     {icon}
     <p className="text-lg font-bold">{name}</p>
   </div>

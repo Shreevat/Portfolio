@@ -1,13 +1,12 @@
 // src/App.tsx
+import ScrollToTop from "./components/UI/ScrollToTop";
 import Home from "./Pages/Home";
 
 function App() {
-  
-
   return (
-    <div >
-  
+    <div>
       <Home />
+      <ScrollToTop />
     </div>
   );
 }
