@@ -25,7 +25,7 @@ const ProfileSection = () => {
           <h2 className="mt-12 text-xl font-bold text-text">
             Shreevatshanka Dhakal
           </h2>
-          <p className="text-sm text-text mt-2">Web Developer</p>
+          <p className="text-sm text-text mt-2 mb-10">Web Developesadjasdr</p>
           <p className="text-sm text-text mt-2">I enjoy building websites :D</p>
         </div>
         {/* Social Icons */}
