@@ -5,42 +5,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        tertiary: 'var(--tertiary)',
-      },
-      dark: {
-        colors: {
-          primary: 'var(--primary)',
-          secondary: 'var(--secondary)',
-          tertiary: 'var(--tertiary)',
-        },
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        tertiary: "var(--tertiary)",
+        text: "var(--text)",
+        background: "var(--background)",
       },
       fontFamily: {
         "open-sans": ["Open Sans", "sans-serif"],
         "hi-melody": ["Hi Melody", "sans-serif"],
       },
       animation: {
-        'shadow-slide': 'shadow-slide 4s linear infinite alternate',
-        'unique-typing': 'unique-typing 4s steps(41, end) 3s infinite, unique-blink 0.5s step-end infinite',
+        "shadow-slide": "shadow-slide 4s linear infinite alternate",
+        "unique-typing":
+          "unique-typing 4s steps(41, end) 3s infinite, unique-blink 0.5s step-end infinite",
       },
       keyframes: {
-        'shadow-slide': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(300px)' },
+        "shadow-slide": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(300px)" },
         },
-        'unique-typing': {
-          '0%': { width: '0%' },
-          '100%': { width: '100%' },
+        "unique-typing": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
         },
-        'unique-blink': {
-          '50%': { borderColor: 'transparent' },
+        "unique-blink": {
+          "50%": { borderColor: "transparent" },
         },
       },
     },
   },
-  darkMode: 'class',
-  darkModeClass: 'dark-mode',
+  darkMode: "class", // Enables dark mode based on class
+  darkModeClass: "dark-mode", // The class that triggers dark mode
   plugins: [],
 };
-

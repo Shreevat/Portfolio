@@ -19,7 +19,7 @@ const Skills = ({ skills, className }: SkillsProps) => (
   <div
     className={`skills bg-primary flex flex-col items-center p-8 ${className}`}
   >
-    <h2 className="text-2xl font-bold mb-8">Technology Expertise</h2>
+    <h2 className="text-2xl text-text font-bold mb-8">Technology Expertise</h2>
     <div className="grid grid-cols-3 gap-4">
       {skills.map((skill, index) => (
         <SkillSection key={index} {...skill} />

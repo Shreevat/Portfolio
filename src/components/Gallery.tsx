@@ -29,7 +29,7 @@ const Gallery = () => {
 
   return (
     <div className="mx-auto p-4 bg-secondary shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center text-primary">
+      <h2 className="text-2xl font-bold mb-4 text-center text-text">
         My Artwork
       </h2>
       <div className="grid grid-cols-2 gap-4">
@@ -39,7 +39,12 @@ const Gallery = () => {
             className="p-4 bg-tertiary rounded-lg cursor-pointer"
             onClick={() => handleImageClick(image.src)}
           >
-            <img src={image.src} alt={image.alt} className="w-full h-auto" />
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-auto object-cover rounded"
+              style={{ objectFit: "cover" }}
+            />
             <p
               className="mt-2 text-lg font-semibold text-secondary text-center"
               style={{ textTransform: "capitalize" }}
@@ -51,13 +56,14 @@ const Gallery = () => {
       </div>
       {selectedImage && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center"
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50"
           onClick={() => setSelectedImage(null)}
         >
           <img
             src={selectedImage}
             alt="Selected Image"
-            className="max-w-4xl max-h-screen object-contain"
+            className="max-w-full max-h-screen object-contain"
+            style={{ maxWidth: "90%", maxHeight: "90%" }}
           />
         </div>
       )}

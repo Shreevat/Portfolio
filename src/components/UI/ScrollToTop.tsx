@@ -26,7 +26,7 @@ const ScrollToTop = () => {
   return (
     isVisible && (
       <button
-        className="fixed bottom-4 right-4 bg-yellow-200 text-black rounded-full p-3 hover:bg-secondary flex items-center justify-center"
+        className="fixed bottom-4 right-4 bg-primary text-text rounded-full p-3 hover:bg-[var(--secondary)] flex items-center justify-center transition-colors duration-300"
         onClick={scrollToTop}
       >
         <FaLongArrowAltUp className="w-5 h-5" />
