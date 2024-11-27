@@ -23,7 +23,7 @@ const Projects = () => {
 
   return (
     <div className="projects bg-primary flex flex-col items-center p-8">
-      <h2 className="text-2xl text-text text-secondary font-bold mb-8">
+      <h2 className="text-2xl text-text font-bold mb-8">
         Game Development Projects
       </h2>
       <div className="grid grid-cols-2 gap-4">

@@ -1,4 +1,5 @@
 import Header from "../components/header";
+import Profile from "./Profile";
 import About from "./About";
 import Footer from "../components/footer";
 import Skills from "../components/skillSection";
@@ -70,6 +71,7 @@ const Home = () => {
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
       <Header label="PORTFOLIO" links={links} />
+      <Profile />
       <About />
       <Skills skills={skills} />
       <Gallery />

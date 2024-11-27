@@ -1,32 +1,30 @@
-/*import me from "../assets/Images/Me.jpg";
-
-interface AboutSectionProps {
-  src: string;
-  alt: string;
-}
-
-const AboutSection = ({ src, alt }: AboutSectionProps) => {*/
-
-const AboutSection = () => {
+import Illustration from "../assets/images/Illustration.png";
+const About = () => {
   return (
-    <div className="about-section relative h-screen bg-background overflow-hidden">
-      {/* Glowing */}
-      <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[400px] top-[200px]  animate-shadow-slide"></div>
-      {/* Typing */}
-      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-3xl font-bold text-text pl-10">
-        <span className="hidden relative overflow-hidden border-r-4 border-tertiary animate-unique-typing whitespace-nowrap text-text lg:block">
-          I am a ??? IDEK. Sites all over the place
-        </span>
-      </div>
+    <div className="about-section min-h-screen flex items-center justify-center bg-primary py-16 px-6">
+      {/* Card Container */}
+      <div className="relative bg-tertaiary text-center p-8 rounded-xl shadow-lg max-w-4xl mx-auto flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0">
+        {/* Illustration Image */}
+        <div className="relative w-64 h-64 lg:w-80 lg:h-80">
+          <img
+            src={Illustration}
+            alt="Illustration"
+            className="w-full h-full object-contain"
+          />
+        </div>
 
-      {/* Developer Info */}
-      <div className="absolute top-1/2 left-1/2 lg:left-2/3 transform -translate-x-1/2 -translate-y-1/2 p-6 bg-secondary rounded-lg shadow-md text-center">
-        <h1 className="text-5xl font-bold text-text">I am a Developer</h1>
-        <h2 className="text-lg font-bold text-text mt-2">Shreevat Dhakal</h2>
-        <p className="text-sm text-text">Web Developer</p>
+        {/* Text Content */}
+        <div className="flex flex-col justify-center space-y-4">
+          <h2 className="text-3xl font-bold text-text">
+            Insert a Catchy line here later ig!!
+          </h2>
+          <p className="text-lg text-text">
+            Aiming to develop a skill set as a web developer!
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default AboutSection;
+export default About;

@@ -11,6 +11,7 @@ export default {
         text: "var(--text)",
         background: "var(--background)",
       },
+      
       fontFamily: {
         "open-sans": ["Open Sans", "sans-serif"],
         "hi-melody": ["Hi Melody", "sans-serif"],
@@ -35,7 +36,7 @@ export default {
       },
     },
   },
-  darkMode: "class", // Enables dark mode based on class
-  darkModeClass: "dark-mode", // The class that triggers dark mode
+  darkMode: "class", 
+  darkModeClass: "dark-mode", 
   plugins: [],
 };

@@ -86,7 +86,7 @@ function Header({ label, links }: HeaderProps) {
           onClick={(e) => e.stopPropagation()}
         >
           <button className="absolute top-4 right-4" onClick={toggleMenu}>
-            <FaBars className="text-white" />
+            <FaBars className="text-text" />
           </button>
           <nav
             className={`md:hidden block space-y-4 mt-10`}
@@ -96,7 +96,7 @@ function Header({ label, links }: HeaderProps) {
               <a
                 key={name}
                 href={href}
-                className="text-[var(--secondary)] hover:text-[var(--secondary)] block"
+                className="text-text hover:text-secondary block"
               >
                 {name}
               </a>
