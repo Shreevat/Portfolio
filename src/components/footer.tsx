@@ -12,7 +12,7 @@ function Footer({ links, contact }: FooterProps) {
         {/* Top-Left Quarter */}
         <a
           href="https://facebook.com"
-          className="absolute w-1/2 h-1/2 bg-blue-500 flex items-center justify-center rounded-tl-full"
+          className="absolute w-1/2 h-1/2 bg-red-500 flex items-center justify-center rounded-tl-full"
         >
           <FaFacebook className="text-white text-2xl" />
         </a>
