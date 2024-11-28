@@ -53,7 +53,7 @@ const Home = () => {
     <>
       {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
       <Header label="PORTFOLIO" links={links} />
-      <About src={ame} alt="About Us" />
+      <About  />
       <Skills skills={skills} />
       <Gallery />
       <Projects />
