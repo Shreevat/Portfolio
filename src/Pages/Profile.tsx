@@ -2,9 +2,10 @@ import me from "../assets/Images/Me.jpg";
 
 const ProfileSection = () => {
   return (
-    <div className=" relative h-screen bg-background overflow-hidden">
+    //give height of 120 vh
+    <div className=" relative h-[110vh] bg-background overflow-hidden">
       {/* Glowing */}
-      <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[400px] top-[200px]  animate-shadow-slide"></div>
+      <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px]  animate-shadow-slide"></div>
       {/* Typing */}
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-3xl font-bold text-text pl-10">
         <span className="hidden relative overflow-hidden border-r-4 border-tertiary animate-unique-typing whitespace-nowrap text-text lg:block">
@@ -25,8 +26,8 @@ const ProfileSection = () => {
           <h2 className="mt-12 text-xl font-bold text-text">
             Shreevatshanka Dhakal
           </h2>
-          <p className="text-sm text-text mt-2">Web Developer</p>
-          <p className="text-sm text-text mt-2">I enjoy building websites :D</p>
+          <p className="text-sm text-text mt-2">Developer?</p>
+          <p className="text-sm text-text mt-2">I enjoy doing (insert required job) :D</p>
         </div>
         {/* Social Icons */}
         <div className="flex justify-center space-x-4 mt-4">
@@ -35,21 +36,21 @@ const ProfileSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-github text-xl text-text hover:text-gray-800"></i>
+            <i className="fab fa-github text-xl text-text hover:text-red-500"></i>
           </a>
           <a
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-twitter text-xl text-blue-500 hover:text-blue-700"></i>
+            <i className="fab fa-twitter text-xl text-text hover:text-blue-500"></i>
           </a>
           <a
             href="https://www.linkedin.com/in/shreevatshanka-dhakal-b35a87176/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-linkedin text-xl text-blue-700 hover:text-blue-900"></i>
+            <i className="fab fa-linkedin text-xl text-text hover:text-blue-600"></i>
           </a>
         </div>
       </div>

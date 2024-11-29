@@ -6,6 +6,13 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": "./", // Sets the base directory for resolving non-relative module imports
+    "paths": {
+      "@*": ["src/*"],
+      "@components": ["./src/components"],
+      "@hoc": ["./src/hoc"],
+      "@constants": ["./src/constants"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "Bundler",

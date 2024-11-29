@@ -1,13 +1,8 @@
 import { useState } from "react";
 import { FaMoon, FaSun, FaBars } from "react-icons/fa";
+import { HEADER_NAME, HEADER_NAVIATION_LINKS } from "../constants/header";
 
-interface HeaderProps {
-  label: string;
-  links: { name: string; href: string }[];
-  classname?: string;
-}
-
-function Header({ label, links }: HeaderProps) {
+function Header() {
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,27 +16,27 @@ function Header({ label, links }: HeaderProps) {
   };
 
   const handleLabelClick = () => {
-    // Navigate to the current page using hash-based navigation
-    window.location.hash = "#home"; // Or any other section you want to target
+    // Navigate to the current page
+    window.location.href = "/Portfolio";
   };
 
   return (
-    <header className="bg-[var(--primary)] flex justify-between items-center py-4 px-4 md:px-8">
-      {/* Label as a clickable element to navigate to the current page */}
+    <header className="bg-background flex justify-between items-center py-4 px-4 md:px-8 border-b-2 border-gray-200 ">
+      {/* Label as a clickable element to navigate to the current page itself */}
       <div className="ml-4 text-center md:text-left">
-        <h1 className="text-2xl font-bold text-text font-hi-melody">
+        <h1 className="text-2xl font-bold font-hi-melody">
           <span
             onClick={handleLabelClick}
-            className="text-text cursor-pointer"
+            className="text-primary cursor-pointer"
           >
-            {label}
+            {HEADER_NAME}
           </span>
         </h1>
       </div>
 
-      {/* Links (Desktop view) */}
+      {/* Links for Desktop view */}
       <nav className={`hidden md:flex space-x-4`}>
-        {links.map(({ name, href }) => (
+        {HEADER_NAVIATION_LINKS.map(({ name, href }) => (
           <a
             key={name}
             href={href}
@@ -92,7 +87,7 @@ function Header({ label, links }: HeaderProps) {
             className={`md:hidden block space-y-4 mt-10`}
             style={{ width: "100%", right: 0 }}
           >
-            {links.map(({ name, href }) => (
+            {HEADER_NAVIATION_LINKS.map(({ name, href }) => (
               <a
                 key={name}
                 href={href}

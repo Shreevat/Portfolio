@@ -1,7 +1,7 @@
-import Header from "../components/header";
+// src/Pages/Home.tsx
+
 import Profile from "./Profile";
-import About from "./About";
-import Footer from "../components/footer";
+import About from "../components/About";
 import Skills from "../components/skillSection";
 import Gallery from "../components/Gallery";
 import Projects from "./Projects";
@@ -15,18 +15,11 @@ import {
   FaGitAlt,
 } from "react-icons/fa";
 import { SiTailwindcss, SiUnity, SiTypescript } from "react-icons/si";
+import withLayout from "../hoc/withLayout";
 
-const Home = () => {
-  const links = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skillSection" },
-  ];
-  const links1 = [
-    { name: "Services", href: "#services" },
-    { name: "Career", href: "#career" },
-    { name: "Contact", href: "#contact" },
-  ];
+const Home = (props: any) => {
+  console.log({ props });
+
   const skills = [
     {
       icon: <FaHtml5 size={24} />,
@@ -65,20 +58,18 @@ const Home = () => {
       name: "Typescript",
     },
   ];
-  const contact = { contact: "98########" };
 
   return (
     <>
-      {/* <DarkModeToggle toggleDarkMode={() => {}} /> */}
-      <Header label="PORTFOLIO" links={links} />
       <Profile />
       <About />
       <Skills skills={skills} />
       <Gallery />
       <Projects />
-      <Footer links={links1} contact={contact} />
     </>
   );
 };
 
-export default Home;
+const HomeWithLayout = withLayout(Home);
+
+export default HomeWithLayout;

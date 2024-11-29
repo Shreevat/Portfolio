@@ -29,7 +29,7 @@ const ScrollToTop = () => {
         className="fixed bottom-4 right-4 bg-primary text-text rounded-full p-3 hover:bg-[var(--secondary)] flex items-center justify-center transition-colors duration-300"
         onClick={scrollToTop}
       >
-        <FaLongArrowAltUp className="w-5 h-5" />
+        <FaLongArrowAltUp className="w-2.5 h-2.5" />
       </button>
     )
   );

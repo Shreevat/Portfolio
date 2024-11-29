@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 /* src/index.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   --text: #091010;
   --background: #f3f9f9;
@@ -19,4 +24,14 @@ body {
   --tertiary: #378683;
 }
 
+
+.social-link {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  padding: 10px;}
+  
 /* ... */
+
+.social-link:hover{
+  transform: scale(1.1);
+  
+}
