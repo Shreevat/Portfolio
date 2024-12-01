@@ -3,7 +3,7 @@
 import Profile from "./Profile";
 import About from "../components/About";
 import Skills from "../components/skillSection";
-import Gallery from "../components/Gallery";
+// import Gallery from "../components/Gallery";
 import Projects from "./Projects";
 
 import {
@@ -64,7 +64,7 @@ const Home = (props: any) => {
       <Profile />
       <About />
       <Skills skills={skills} />
-      <Gallery />
+      {/* <Gallery /> */}
       <Projects />
     </>
   );
