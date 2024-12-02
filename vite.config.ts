@@ -4,10 +4,11 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Portfolio/",  // Ensure this base path for GitHub Pages
+  // Removed base path for Vercel
   build: {
+    outDir: "dist",  // Specify the build output directory
     rollupOptions: {
-      input: "./index.html",  // Only the main entry point for Vite
+      input: "./index.html",  // The main entry point for Vite
     },
   },
 });
