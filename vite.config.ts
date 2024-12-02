@@ -1,13 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Portfolio/",
-  server: {
-    fs: {
-      allow: [".."],
+  base: "/Portfolio/", // Ensure this base path for GitHub Pages
+  build: {
+    rollupOptions: {
+      input: {
+        main: "./index.html",  // Main entry point
+        contact: "./src/Pages/Contact/index.html",  // Additional page for /Contact
+        projects: "./src/Pages/Projects/index.html", // Additional page for /Projects
+      },
     },
   },
 });
