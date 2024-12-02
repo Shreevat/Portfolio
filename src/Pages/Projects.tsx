@@ -1,10 +1,13 @@
 import useImageViewer from "../Hooks/useImageViewer";
+import useIntersectionObserver from "../Hooks/useIntersectionObserver";
 import md from "../assets/Images/MailoDriver.gif";
 import rd from "../assets/Images/RajeshDai.gif";
 
 const Projects = () => {
   const { selectedImage, isAnimating, openViewer, closeViewer } =
     useImageViewer();
+
+  const isInView = useIntersectionObserver("startPoint1", { threshold: 0.5 });
 
   const projects = [
     {
@@ -26,8 +29,12 @@ const Projects = () => {
   ];
 
   return (
-    <div className="projects flex flex-col items-center p-8">
-      <h2 className="text-2xl text-text font-bold mb-8">
+    <div
+      className={`projects flex flex-col items-center p-8 ${
+        isInView ? "animate-pop-out" : ""
+      }`}
+    >
+      <h2 id="startPoint1" className="text-2xl text-text font-bold mb-8">
         Game Development Projects
       </h2>
       <div className="grid grid-cols-2 gap-4">

@@ -20,6 +20,7 @@ export default {
         "shadow-slide": "shadow-slide 4s linear infinite alternate",
         "unique-typing":
           "unique-typing 4s steps(41, end) 3s infinite, unique-blink 0.5s step-end infinite",
+        "pop-out": "pop-out 1s",
       },
       keyframes: {
         "shadow-slide": {
@@ -32,6 +33,10 @@ export default {
         },
         "unique-blink": {
           "50%": { borderColor: "transparent" },
+        },
+        "pop-out": {
+          "0%": { transform: "scale(0.8)", opacity: 0 },
+          "100%": { transform: "scale(1)", opacity: 1 },
         },
       },
     },
