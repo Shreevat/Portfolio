@@ -18,11 +18,11 @@ const SkillSection = ({ icon, name }: Skill) => (
 );
 
 const Skills = ({ skills, className }: SkillsProps) => {
-  const isInView = useIntersectionObserver('startPoint', { threshold: 0});
+  const isInView = useIntersectionObserver('skill', { threshold: 0});
 
   return (
     <div
-      id="startPoint"
+      id="skill"
       className={`skills h-screen bg flex flex-col items-center p-10 ${className} ${isInView ? 'animate-pop-out' : ''}`}
     >
       <h1 id="startPoint" className="text-2xl text-text font-bold pt-10">Technology Expertise</h1>

@@ -13,19 +13,19 @@ function Header() {
 
   const handleLabelClick = () => {
     // Navigate to the current page
-    window.location.href = "/Portfolio";
+    window.location.href = "/Portfolio/";
   };
 
   return (
     <header
       className=" flex justify-between items-center py-4 px-4 md:px-8 border-b-2 border-gray-200 "
       style={{
-        background: "linear-gradient(to right, var(--background), var(--primary) 50%)",
+        background:
+          "linear-gradient(to right, var(--background), var(--primary) 50%)",
         backgroundSize: "100% 300px",
         backgroundPosition: "0% 100%",
         backgroundRepeat: "no-repeat",
       }}
-      
     >
       {/* Label as a clickable element to navigate to the current page itself */}
       <div className="ml-4 text-center md:text-left">
