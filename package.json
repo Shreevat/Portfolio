@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --branch gh-pages"
+    "deploy": "gh-pages -d dist --branch test"
   },
   "dependencies": {
     "@fontsource/hi-melody": "^5.1.0",
