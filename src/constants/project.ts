@@ -13,7 +13,7 @@ export const PROJECTS = [
   `,
   },
   {
-    title: "Rajesh Dai (Game)",
+    title: "Rajesh Dai (Gamesssss)",
     description: `
     A 3D game made in Unity Engine.
     Worked on level design.`,
