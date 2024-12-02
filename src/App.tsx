@@ -4,7 +4,7 @@ import { DarkModeContext } from './context/darkModeContext';
 import ScrollToTop from "./components/UI/ScrollToTop";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
-import Projects from "./Pages/ProjectsPage";
+import Projects from "./Pages/Projects";
 import { DarkModeProvider } from './context/darkModeContext';
 
 function AppContent() {
