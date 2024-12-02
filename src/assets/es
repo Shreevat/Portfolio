@@ -1,0 +1,48 @@
+Previously, the Header component had its own darkMode state, which was managed using the useState hook. This state was not connected to the DarkModeContext, which is used by the rest of the application to manage the dark mode state.
+
+To fix the issue, I removed the useState hook for darkMode from the Header component and instead used the useContext hook to access the darkMode state and toggleDarkMode function from the DarkModeContext.
+
+
+DECEMBER 2 ISSUE 1
+
+
+const toggleDarkMode = () => {
+  setDarkMode(!darkMode);
+  localStorage.setItem('darkMode', (!darkMode).toString());
+  window.location.reload();
+};
+
+When you added the window.location.reload() call to the toggleDarkMode function, it forced the page to reload after the darkMode value was updated in local storage.
+
+This reload caused the DarkModeProvider component to re-render, which in turn caused it to re-read the darkMode value from local storage.
+
+DECEMBER 2 ISSUE 2
+
+const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
+  const [darkMode, setDarkMode] = useState(() => {
+    const storedDarkMode = localStorage.getItem('darkMode');
+    return storedDarkMode === 'true';
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem('darkMode', (!darkMode).toString());
+    // Update the context value
+    contextValue.darkMode = !darkMode;
+  };
+
+  const contextValue = {
+    darkMode,
+    toggleDarkMode,
+  };
+
+  return (
+    <DarkModeContext.Provider value={contextValue}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+};
+
+In this updated implementation, we're updating the contextValue object directly when the toggleDarkMode function is called. This will cause the DarkModeContext to be updated, which will in turn cause all the components that are using the context to be updated.
+
+By doing it this way, we don't need to reload the page to update the DarkModeProvider component.

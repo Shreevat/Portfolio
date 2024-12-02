@@ -17,11 +17,18 @@ const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    localStorage.setItem('darkMode', darkMode.toString());
+    localStorage.setItem('darkMode', (!darkMode).toString());
+    // Update the context value
+    contextValue.darkMode = !darkMode;
+  };
+
+  const contextValue = {
+    darkMode,
+    toggleDarkMode,
   };
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <DarkModeContext.Provider value={contextValue}>
       {children}
     </DarkModeContext.Provider>
   );
