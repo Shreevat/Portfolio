@@ -17,9 +17,7 @@ import {
 import { SiTailwindcss, SiUnity, SiTypescript } from "react-icons/si";
 import withLayout from "../hoc/withLayout";
 
-const Home = (props: any) => {
-  console.log({ props });
-
+const Home: React.FC = () => {
   const skills = [
     {
       icon: <FaHtml5 size={24} />,
