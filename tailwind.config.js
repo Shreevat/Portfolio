@@ -15,6 +15,7 @@ export default {
       fontFamily: {
         "open-sans": ["Open Sans", "sans-serif"],
         "hi-melody": ["Hi Melody", "sans-serif"],
+        "roboto-slab": ["Roboto Slab", "sans-serif"],
       },
       animation: {
         "shadow-slide": "shadow-slide 4s linear infinite alternate",

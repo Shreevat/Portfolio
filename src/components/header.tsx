@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { DarkModeContext } from "../context/darkModeContext";
 import { FaMoon, FaSun, FaBars } from "react-icons/fa";
 import { HEADER_NAME, HEADER_NAVIATION_LINKS } from "../constants/header";
+import "@fontsource/roboto-slab";
 
 function Header() {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
@@ -29,7 +30,7 @@ function Header() {
     >
       {/* Label as a clickable element to navigate to the current page itself */}
       <div className="ml-4 text-center md:text-left">
-        <h1 className="text-2xl font-bold font-hi-melody">
+        <h1 className="text-2xl font-bold font-roboto-slab">
           <span
             onClick={handleLabelClick}
             className="text-primary cursor-pointer"
