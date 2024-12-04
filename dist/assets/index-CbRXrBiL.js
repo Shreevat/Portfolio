@@ -75,7 +75,7 @@ Error generating stack: `+i.message+`
   `},{title:"Mailo Driver (Game)",description:`
     A driving game made in Unity Engine, featuring a license trial mode.
     Worked on map design.
-  `},{title:"Rajesh Dai (Games)",description:`
+  `},{title:"Rajesh Daii (Games)",description:`
     A 3D game made in Unity Engine.
     Worked on level design.`},{title:"Baun (Game)",description:`
     A Side-scroller 2D sprite game made in Unity Engine.
