@@ -1,5 +1,5 @@
-import useImageViewer from "../Hooks/useImageViewer";
-import useIntersectionObserver from "../Hooks/useIntersectionObserver";
+import useImageViewer from "../hooks/useImageViewer";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 import md from "../assets/Images/MailoDriver.gif";
 import rd from "../assets/Images/RajeshDai.gif";
 
