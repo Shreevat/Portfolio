@@ -14,7 +14,7 @@ function Header() {
 
   const handleLabelClick = () => {
     // Navigate to the current page
-    window.location.href = "/Portfolio/";
+    window.location.href = "/";
   };
 
   return (
