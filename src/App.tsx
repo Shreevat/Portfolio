@@ -11,7 +11,7 @@ function AppContent() {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <Router basename="/Portfolio">
+    <Router basename="/">
       <div className={`bg-background ${darkMode ? 'dark-mode' : ''}`}>
         <Routes>
           <Route path="/" element={<Home />} />
