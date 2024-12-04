@@ -1,4 +1,4 @@
-import useIntersectionObserver from '../Hooks/useIntersectionObserver';
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 interface Skill {
   icon: JSX.Element;
@@ -18,14 +18,18 @@ const SkillSection = ({ icon, name }: Skill) => (
 );
 
 const Skills = ({ skills, className }: SkillsProps) => {
-  const isInView = useIntersectionObserver('skill', { threshold: 0});
+  const isInView = useIntersectionObserver("skill", { threshold: 0 });
 
   return (
     <div
       id="skill"
-      className={`skills h-screen bg flex flex-col items-center p-10 ${className} ${isInView ? 'animate-pop-out' : ''}`}
+      className={`skills h-screen bg flex flex-col items-center p-10 ${className} ${
+        isInView ? "animate-pop-out" : ""
+      }`}
     >
-      <h1 id="startPoint" className="text-2xl text-text font-bold pt-10">Technology Expertise</h1>
+      <h1 id="startPoint" className="text-2xl text-text font-bold pt-10">
+        Technology Expertise
+      </h1>
       <h4 className=" text-text pb-10">Am familiar with these technology</h4>
       <div className="grid grid-cols-3 gap-4">
         {skills.map((skill, index) => (

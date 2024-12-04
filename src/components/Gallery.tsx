@@ -1,4 +1,4 @@
-import useImageViewer from "../Hooks/useImageViewer";
+import useImageViewer from "../hooks/useImageViewer";
 import ame from "../assets/Images/Aboutme.jpg";
 import ragnar from "../assets/Images/ragnar.jpg";
 import trio from "../assets/Images/trio.jpg";
@@ -12,7 +12,8 @@ const createImageObject = (src: string) => ({
 });
 
 const Gallery = () => {
-  const { selectedImage, isAnimating, openViewer, closeViewer } = useImageViewer();
+  const { selectedImage, isAnimating, openViewer, closeViewer } =
+    useImageViewer();
 
   const galleryImages = [
     createImageObject(kaneki),

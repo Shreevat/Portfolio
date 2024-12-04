@@ -18,4 +18,18 @@ export const PROJECTS = [
     A 3D game made in Unity Engine.
     Worked on level design.`,
   },
+
+  {
+    title: "Baun (Game)",
+    description: `
+    A Side-scroller 2D sprite game made in Unity Engine.
+    Worked on platform design, level design and aniamtion of sprites`,
+  },
+
+  {
+    title: "Baun (Game)",
+    description: `
+    A Side-scroller 2D sprite game made in Unity Engine.
+    Worked on platform design, level design and aniamtion of sprites`,
+  },
 ];
