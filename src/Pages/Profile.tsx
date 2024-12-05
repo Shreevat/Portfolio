@@ -21,65 +21,73 @@ const socialLinks = [
 
 const ProfileSection = () => {
   const [isSwapped, setIsSwapped] = useState(false);
-  const [isHovered, setIsHovered] = useState(false); // State to track hover
+  const [isHovered, setIsHovered] = useState(false);
 
   const toggleSwap = () => {
     setIsSwapped(!isSwapped);
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      {/* Container holding the Profile Section*/}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Container holding the Profile Section */}
       <div
-        className={`relative h-[100vh] bg-background overflow-hidden transition-transform duration-500 ${
+        className={`relative bg-background overflow-hidden transition-transform duration-500 ${
           isSwapped ? "translate-x-full" : "translate-x-0"
         }`}
       >
         {/* Profile Section */}
-        <div className="relative h-[110vh] bg-background overflow-hidden">
-          {/* Glowing */}
-          <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px] animate-shadow-slide"></div>
-          {/* Typing */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-3xl font-bold text-text pl-10">
-            <span className="hidden relative overflow-hidden border-r-4 border-tertiary animate-unique-typing whitespace-nowrap font-roboto-slab text-text lg:block">
-              I am a ??? IDEK. Sites all over the place
-            </span>
-          </div>
+        <div className="relative h-screen bg-background overflow-hidden flex items-center">
+          {/* Glowing Element */}
+          <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px] animate-shadow-slide z-10"></div>
 
-          <div className="relative top-1/2 left-1/2 lg:left-2/3 transform -translate-x-1/2 -translate-y-1/2 p-6 bg-secondary rounded-lg shadow-md text-center max-w-xs">
-            {/* Image */}
-            <img
-              src={me}
-              alt="Pfp"
-              className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full object-cover border-2 border-primary shadow-lg"
-            />
-
-            {/* Developer Info */}
-            <div className="mt-14">
-              <h2 className="mt-12 text-xl font-bold text-text">
-                Shreevatshanka Dhakal
-              </h2>
-              <p className="text-sm text-text mt-2">Developer?</p>
-              <p className="text-sm text-text mt-2">
-                I enjoy doing (insert required job) :D
-              </p>
-            </div>
-            {/* Social Icons */}
-            <div className="flex justify-center space-x-4 mt-4">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i
-                    className={`${link.iconClass} text-xl text-text ${link.hoverColor}`}
-                  ></i>
-                </a>
-              ))}
+          {/* Typing Section */}
+          <div className="flex-1 items-center justify-center hidden lg:block z-20 relative">
+            <div className="text-3xl font-bold text-text pl-20">
+              <span className="hidden relative overflow-hidden border-r-4 border-tertiary animate-unique-typing whitespace-nowrap font-roboto-slab text-text lg:block">
+                I am a ??? IDEK. Sites all over the place
+              </span>
             </div>
           </div>
+
+          {/* Main Box Section */}
+<div className="flex-1 flex items-center justify-center z-20 relative px-4 sm:px-8"> {/* Added horizontal padding */}
+  <div className="main-box bg-secondary p-6 sm:p-8 rounded-lg shadow-md text-center max-w-[90%] sm:max-w-[500px] w-full relative"> {/* Adjusted padding and width */}
+    {/* Profile Image */}
+    <img
+      src={me}
+      alt="Pfp"
+      className="absolute -top-14 sm:-top-16 left-1/2 transform -translate-x-1/2 w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-2 border-primary shadow-lg z-20"
+    />
+
+    {/* Developer Info */}
+    <div className="mt-14 sm:mt-16">
+      <h2 className="text-xl sm:text-2xl font-bold text-text">
+        Shreevatshanka Dhakal
+      </h2>
+      <p className="text-sm sm:text-base text-text mt-2">Developer?</p>
+      <p className="text-sm sm:text-base text-text mt-2">
+        I enjoy doing (insert required job) :D
+      </p>
+    </div>
+
+    {/* Social Icons */}
+    <div className="flex justify-center space-x-4 sm:space-x-6 mt-6">
+      {socialLinks.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i
+            className={`${link.iconClass} text-xl sm:text-2xl text-text ${link.hoverColor}`}
+          ></i>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
 
@@ -88,8 +96,8 @@ const ProfileSection = () => {
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-60 bg-primary text-white p-2 rounded-full cursor-pointer hover:bg-secondary transition-all duration-300 z-50"
         onClick={toggleSwap}
         style={{ opacity: 0.7 }}
-        onMouseEnter={() => setIsHovered(true)} // Show tooltip on hover
-        onMouseLeave={() => setIsHovered(false)} // Hide tooltip when not hovered
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <i
           className={`fas ${
@@ -127,14 +135,13 @@ const ProfileSection = () => {
           </div>
 
           {/* Title */}
-          <div className="col-span-1 justify-center items-center text-center flex flex-col">
+          <div className="col-span-1 flex flex-col items-center text-center">
             <h1 className="text-2xl lg:text-3xl font-bold text-text mb-2">
               HI THERE! I’M
             </h1>
             <h2 className="text-3xl lg:text-4xl font-extrabold text-primary mb-4">
               Shreevatshanka Dhakal
             </h2>
-
             <p className="text-sm lg:text-base text-text mb-4">
               A{" "}
               <span className="font-semibold text-primary">

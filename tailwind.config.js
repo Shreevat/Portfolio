@@ -22,7 +22,7 @@ export default {
         "unique-typing":
           "unique-typing 4s steps(41, end) 3s infinite, unique-blink 0.5s step-end infinite",
         "pop-out": "pop-out 1s",
-        "sweepIn": "sweepIn 0.6s ease-in-out",
+        "sweepIn": "sweepIn 0.6s ease-out forwards",
       },
       keyframes: {
         "shadow-slide": {
@@ -41,7 +41,7 @@ export default {
           "100%": { transform: "scale(1)", opacity: 1 },
         },
         sweepIn: {
-          '0%': { transform: 'translateX(-100%)', opacity: 0 },
+          '0%': { transform: 'translateX(100%)', opacity: 0 },
           '100%': { transform: 'translateX(0)', opacity: 1 },
         },
       },

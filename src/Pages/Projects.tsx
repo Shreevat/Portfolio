@@ -1,39 +1,65 @@
+import {
+  DndContext,
+  useSensor,
+  useSensors,
+  MouseSensor,
+  DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { useState } from "react";
 import { PROJECTS } from "../constants/project.ts";
 import withLayout from "../hoc/withLayout";
-// import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import SortableItem from "../components/SortableItem.tsx"; // Custom component for sortable items
 
 function Project() {
-  
-  
-    
+  const [projects, setProjects] = useState(PROJECTS);
+
+  // Sensors for drag-and-drop
+  const sensors = useSensors(useSensor(MouseSensor));
+
+  // Handle drag-end event
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (active.id !== over?.id) {
+      const oldIndex = projects.findIndex((p) => p.id === active.id);
+      const newIndex = projects.findIndex((p) => p.id === over?.id);
+      setProjects((prev) => arrayMove(prev, oldIndex, newIndex));
+    }
+  };
 
   return (
-    <div className="projects grid grid-cols-1 gap-y-5 items-center justify-items-center p-8 min-h-screen overflow-y-auto  shadow-md">
-      <h1 className="text-2xl text-text font-bold text-center mb-4">
-        Have worked on
-      </h1>
+    <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+      <div className="projects-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-items-center p-8 min-h-screen overflow-y-auto shadow-md">
+        <h1 className="text-2xl text-text font-bold text-center mb-4">
+          Have worked on
+        </h1>
 
-     
-      {PROJECTS.map((project, index) => (
-
-        
-        <div
-          className={`projects bg-tertiary opacity-0 w-[80%] p-6 rounded-lg shadow-[rgba(0,0,0,0.35)_0px_5px_15px]  transition-transform duration-300 hover:scale-105 
-            animate-sweepIn`}
-          style={{ animationDelay: `${index * 0.3}s` }} //
-          key={index}
-          
-          onAnimationStart={(e) => {
-            e.currentTarget.classList.remove("opacity-0");
-          }}
+        <SortableContext
+          items={projects.map((p) => p.id)}
+          strategy={verticalListSortingStrategy}
         >
-          <h2 className="text-2xl text-text font-bold text-center mb-2">
-            {project.title}
-          </h2>
-          <p className="text-lg text-text text-center">{project.description}</p>
-        </div>
-      ))}
-    </div>
+          {projects.map((project, index) => (
+            <SortableItem key={project.id} id={project.id}>
+              <div
+                className="sortable-item bg-tertiary p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300 w-full max-w-[350px] mx-auto"
+                style={{ animationDelay: `${index * 0.3}s` }}
+              >
+                <h2 className="text-2xl text-text font-bold text-center mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-lg text-text text-center">
+                  {project.description}
+                </p>
+              </div>
+            </SortableItem>
+          ))}
+        </SortableContext>
+      </div>
+    </DndContext>
   );
 }
 
