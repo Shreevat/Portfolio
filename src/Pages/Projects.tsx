@@ -18,10 +18,10 @@ import SortableItem from "../components/SortableItem.tsx"; // Custom component f
 function Project() {
   const [projects, setProjects] = useState(PROJECTS);
 
-  // Sensors for drag-and-drop
+  // drag-and-drop ko sensor
   const sensors = useSensors(useSensor(MouseSensor));
 
-  // Handle drag-end event
+  // drag-end event handler
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (active.id !== over?.id) {
