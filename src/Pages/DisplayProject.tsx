@@ -4,8 +4,7 @@ import md from "../assets/Images/MailoDriver.gif";
 import rd from "../assets/Images/RajeshDai.gif";
 
 const Projects = () => {
-  const { selectedImage, isAnimating, openViewer, closeViewer } =
-    useImageViewer();
+  const { selectedImage, openViewer, closeViewer } = useImageViewer();
 
   const isInView = useIntersectionObserver("startPoint1", { threshold: 0.5 });
 
@@ -29,15 +28,15 @@ const Projects = () => {
   ];
 
   return (
-    <div
-      className={`projects flex flex-col items-center p-8 ${
-        isInView ? "animate-pop-out" : ""
-      }`}
-    >
+    <div className={`projects flex flex-col items-center p-8`}>
       <h2 id="startPoint1" className="text-2xl text-text font-bold mb-8">
         Game Development Projects
       </h2>
-      <div className="grid grid-cols-2 gap-4">
+      <div
+        className={`grid grid-cols-2 gap-4 ${
+          isInView ? "animate-pop-out" : ""
+        }`}
+      >
         {projects.map((project, index) => (
           <div
             key={index}
@@ -62,9 +61,7 @@ const Projects = () => {
           <img
             src={selectedImage}
             alt="Selected Project"
-            className={`max-w-full max-h-screen object-contain transform transition-all duration-300 ${
-              isAnimating ? "scale-100 opacity-100" : "scale-50 opacity-0"
-            }`}
+            className={`max-w-full max-h-screen object-contain transform transition-all duration-300 `}
             style={{
               maxWidth: "90%",
               maxHeight: "90%",

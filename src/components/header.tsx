@@ -19,7 +19,7 @@ function Header() {
 
   return (
     <header
-      className=" flex justify-between items-center py-4 px-4 md:px-8 border-b-2 border-gray-200 "
+      className="flex justify-between items-center py-4 px-4 md:px-8 border-b-2 border-gray-200"
       style={{
         background:
           "linear-gradient(to right, var(--background), var(--primary) 50%)",
@@ -29,14 +29,21 @@ function Header() {
       }}
     >
       {/* Label as a clickable element to navigate to the current page itself */}
-      <div className="ml-4 text-center md:text-left">
+      <div
+        onClick={handleLabelClick}
+        className="ml-4 text-center md:text-left relative"
+      >
         <h1 className="text-2xl font-bold font-roboto-slab">
-          <span
-            onClick={handleLabelClick}
-            className="text-primary cursor-pointer"
-          >
-            {HEADER_NAME}
-          </span>
+          <span className="text-primary cursor-pointer">{HEADER_NAME}</span>
+          {/* "AFTER DARK" text for dark mode */}
+          {darkMode && (
+            <span
+              className="absolute bottom-0 right-0 text-xs text-white opacity-100 transition-all duration-300 z-10 glow-text"
+              style={{ transform: "translate(20%, 20%)" }}
+            >
+              After Dark
+            </span>
+          )}
         </h1>
       </div>
 

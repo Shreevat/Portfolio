@@ -7,7 +7,7 @@ const Contact = () => {
     <>
       <div
         id="contactme"
-        className="max-w-md mt-8 mb-8 mx-auto p-4 bg-tertiary rounded-lg shadow-md"
+        className="max-w-md  mt-8 mb-8 mx-auto p-4 bg-tertiary rounded-lg shadow-md"
       >
         <h2 className="text-2xl font-bold text-center mb-4">Get in Touch</h2>
         <form className="flex flex-col items-center">

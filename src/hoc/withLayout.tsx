@@ -9,7 +9,9 @@ function withLayout<P extends JSX.IntrinsicAttributes>(
     return (
       <div>
         <Header />
-        <WrappedComponent {...props} />
+        <div className="min-h-screen">
+          <WrappedComponent {...props} />
+        </div>
         <Footer />
       </div>
     );
