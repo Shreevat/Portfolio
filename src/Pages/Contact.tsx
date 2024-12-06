@@ -7,13 +7,17 @@ const Contact = () => {
     <>
       <div
         id="contactme"
-        className="max-w-md  mt-8 mb-8 mx-auto p-4 bg-tertiary rounded-lg shadow-md"
-      >
-        <h2 className="text-2xl font-bold text-center mb-4">Get in Touch</h2>
+className="w-[80%] md:w-[50%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-2 bg-tertiary rounded-lg shadow-md mx-auto"      >
+        <h2 className="text-2xl font-bold text-text text-center mb-4">Get in Touch</h2>
         <form className="flex flex-col items-center">
           <input
             type="text"
             placeholder="Your Name"
+            className="w-full p-2 mb-4 bg-secondary rounded-lg"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
             className="w-full p-2 mb-4 bg-secondary rounded-lg"
           />
           <textarea
