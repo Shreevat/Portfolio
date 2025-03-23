@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import me from "../assets/Images/Me.jpg";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   {
@@ -20,15 +21,33 @@ const socialLinks = [
 ];
 
 const ProfileSection = () => {
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
   const [isSwapped, setIsSwapped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const phrases = ["a Frontend Developer", "a Creative Coder"]; // Moved inside useEffect
+    const timer = setTimeout(() => {
+      setText(phrases[index].substring(0, text.length + 1));
+
+      if (text.length === phrases[index].length) {
+        setTimeout(() => {
+          setText("");
+          setIndex((index + 1) % phrases.length);
+        }, 2000);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [text, index]);
 
   const toggleSwap = () => {
     setIsSwapped(!isSwapped);
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative my-auto min-h-screen overflow-hidden flex justify-center items-center">
       {/* Container holding the Profile Section */}
       <div
         className={`relative bg-background overflow-hidden transition-transform duration-500 ${
@@ -38,56 +57,91 @@ const ProfileSection = () => {
         {/* Profile Section */}
         <div className="relative h-screen bg-background overflow-hidden flex items-center">
           {/* Glowing Element */}
-          <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px] animate-shadow-slide z-10"></div>
+          <div className="absolute  bg-secondary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px] left-1/4 transform -translate-x-1/2 animate-shadow-slide z-10"></div>
 
-          {/* Typing Section */}
-          <div className="flex-1 items-center justify-center hidden lg:block z-20 relative">
-            <div className="text-3xl font-bold text-text pl-20">
-              <span className="hidden relative overflow-hidden border-r-4 border-tertiary animate-unique-typing whitespace-nowrap font-roboto-slab text-text lg:block">
-                I am a ??? IDEK. Sites all over the place
-              </span>
+          <motion.div
+            className="lg:w-1/2 mb-12 lg:mb-0"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+              Hello, I'm <span className="text-primary">Shreevatshanka</span>
+            </h1>
+            <div className="h-20">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary">
+                I am <span className="text-primary">{text}</span>
+                <span className="animate-blink">|</span>
+              </h2>
             </div>
-          </div>
+            <p className="text-text text-lg md:text-xl max-w-lg mt-4 pt-2">
+              Passionate about creating beautiful, responsive, and user-friendly
+              web experiences that solve real-world problems.
+            </p>
+
+            <div className="mt-8 flex space-x-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-primary text-text font-medium rounded-lg hover:bg-primary/90 transition-colors"
+                onClick={() => (window.location.href = "/projects")} // navigate to projects
+              >
+                View Projects
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary/10 transition-colors"
+                onClick={() => (window.location.href = "/contact")} // navigate to contact
+              >
+                Contact Me
+              </motion.button>
+            </div>
+          </motion.div>
 
           {/* Main Box Section */}
-<div className="flex-1 flex items-center justify-center z-20 relative px-4 sm:px-8"> {/* Added horizontal padding */}
-  <div className="main-box bg-secondary p-6 sm:p-8 rounded-lg shadow-md text-center max-w-[90%] sm:max-w-[500px] w-full relative"> {/* Adjusted padding and width */}
-    {/* Profile Image */}
-    <img
-      src={me}
-      alt="Pfp"
-      className="absolute -top-14 sm:-top-16 left-1/2 transform -translate-x-1/2 w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-2 border-primary shadow-lg z-20"
-    />
-
-    {/* Developer Info */}
-    <div className="mt-14 sm:mt-16">
-      <h2 className="text-xl sm:text-2xl font-bold text-text">
-        Shreevatshanka Dhakal
-      </h2>
-      <p className="text-sm sm:text-base text-text mt-2">Developer?</p>
-      <p className="text-sm sm:text-base text-text mt-2">
-        I enjoy doing (insert required job) :D
-      </p>
-    </div>
-
-    {/* Social Icons */}
-    <div className="flex justify-center space-x-4 sm:space-x-6 mt-6">
-      {socialLinks.map((link, index) => (
-        <a
-          key={index}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i
-            className={`${link.iconClass} text-xl sm:text-2xl text-text ${link.hoverColor}`}
-          ></i>
-        </a>
-      ))}
-    </div>
-  </div>
-</div>
-
+          <div className="flex-1 flex items-center justify-center z-20 relative px-4 sm:px-8">
+            {" "}
+            {/* Added horizontal padding */}
+            <div className="main-box bg-secondary p-6 sm:p-8 rounded-lg shadow-md text-center max-w-[90%] sm:max-w-[500px] w-full relative">
+              {" "}
+              {/* Adjusted padding and width */}
+              {/* Profile Image */}
+              <img
+                src={me}
+                alt="Pfp"
+                className="absolute -top-14 sm:-top-16 left-1/2 transform -translate-x-1/2 w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-2 border-primary shadow-lg z-20"
+              />
+              {/* Developer Info */}
+              <div className="mt-14 sm:mt-16">
+                <h2 className="text-xl sm:text-2xl font-bold text-text">
+                  Shreevatshanka Dhakal
+                </h2>
+                <p className="text-sm sm:text-base text-text mt-2">
+                  Developer?
+                </p>
+                <p className="text-sm sm:text-base text-text mt-2">
+                  I enjoy doing (insert required job) :D
+                </p>
+              </div>
+              {/* Social Icons */}
+              <div className="flex justify-center space-x-4 sm:space-x-6 mt-6">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className={`${link.iconClass} text-xl sm:text-2xl text-text ${link.hoverColor}`}
+                    ></i>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -144,7 +198,7 @@ const ProfileSection = () => {
             </h2>
             <p className="text-sm lg:text-base text-text mb-4">
               A{" "}
-              <span className="font-semibold text-primary">
+              <span className="font-semibold text-text">
                 Front-End Web Developer
               </span>{" "}
               passionate about creating interactive applications and experiences

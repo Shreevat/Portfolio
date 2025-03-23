@@ -10,10 +10,12 @@ interface SkillsProps {
   className?: string;
 }
 
-const SkillSection = ({ icon, name }: Skill) => (
-  <div className="skill-rectangle bg-tertiary aspect-square w-36 lg:w-48 rounded-lg shadow-md flex flex-col items-center justify-center transition-transform duration-300 hover:scale-110">
-    <div className="icon-container text-3xl lg:text-4xl mb-3 lg:mb-4">{icon}</div>
-    <p className="text-lg lg:text-xl font-semibold">{name}</p>
+const SkillCard = ({ icon, name }: Skill) => (
+  <div className="group bg-muted border border-border rounded-2xl shadow-sm flex flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+    <div className="text-primary text-4xl mb-3 group-hover:scale-110 transition-transform">
+      {icon}
+    </div>
+    <p className="text-base font-medium text-text">{name}</p>
   </div>
 );
 
@@ -21,24 +23,22 @@ const Skills = ({ skills, className }: SkillsProps) => {
   const isInView = useIntersectionObserver("skill", { threshold: 0 });
 
   return (
-    <div
+    <section
       id="skill"
-      className={`skills min-h-screen flex flex-col items-center p-12 ${className} ${
-        isInView ? "animate-pop-out" : ""
+      className={`min-h-screen flex flex-col items-center px-6 lg:px-12 py-16 space-y-6 ${className} ${
+        isInView ? "animate-fade-in" : ""
       }`}
     >
-      <h1 id="startPoint" className="text-3xl lg:text-4xl text-text font-bold pt-8">
-        Technology Expertise
-      </h1>
-      <h4 className="text-text text-lg lg:text-xl mb-12">
+      <h1 className="text-3xl lg:text-4xl font-bold text-text">Technology Expertise</h1>
+      <h4 className="text-text text-lg lg:text-xl mb-6">
         Am familiar with these technologies
       </h4>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl">
         {skills.map((skill, index) => (
-          <SkillSection key={index} {...skill} />
+          <SkillCard key={index} {...skill} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
