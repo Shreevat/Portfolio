@@ -117,7 +117,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 border hover:bg-primary icon-text-primary rounded-full transition"
-                    aria-label={name} 
+                    aria-label={name}
                   >
                     <Icon className="w-5 h-5 text-text " />
                   </a>
