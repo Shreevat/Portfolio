@@ -5,7 +5,7 @@ export const socialLinks = [
   {
     name: "GitHub",
     href: "https://github.com/Shreevat",
-    Icon: Github, // ✅ Store the component reference, not JSX
+    Icon: Github, 
   },
   {
     name: "Twitter",
