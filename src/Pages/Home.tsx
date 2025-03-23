@@ -1,6 +1,6 @@
 // src/Pages/Home.tsx
 
-import Profile from "./Profile";
+import Profile from "./HeroSection";
 import About from "../components/About";
 import Skills from "../components/skillSection";
 // import Gallery from "../components/Gallery";

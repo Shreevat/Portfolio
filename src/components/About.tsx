@@ -84,17 +84,6 @@ const About = () => {
                     My journey in development has equipped me with a diverse skill set and a problem-solving mindset
                     that I bring to every project I work on.
                   </p>
-
-                 
-
-                  <div className="pt-6">
-                    <a
-                      href="#contact"
-                      className="inline-block bg-primary text-text font-medium px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300"
-                    >
-                      Get In Touch
-                    </a>
-                  </div>
                 </motion.div>
               </div>
             </motion.div>

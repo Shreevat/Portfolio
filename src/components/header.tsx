@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import { DarkModeContext } from "../context/darkModeContext";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { HEADER_NAME, HEADER_NAVIATION_LINKS } from "../constants/header";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom"; 
 import "@fontsource/roboto-slab";
 
 function Header() {
@@ -149,7 +149,7 @@ function Header() {
               {HEADER_NAVIATION_LINKS.map(({ name, href }) => (
                 <Link
                   key={name}
-                  to={href} // Use Link component for navigation
+                  to={href} 
                   className="text-text hover:text-primary block py-2 border-b border-border transition-colors duration-200"
                   onClick={toggleMenu}
                 >

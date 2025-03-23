@@ -1,24 +1,8 @@
 import { useState, useEffect } from "react";
+import { socialLinks } from "../constants/socialinks";
 import me from "../assets/Images/Me.jpg";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-const socialLinks = [
-  {
-    href: "https://github.com/Shreevat",
-    iconClass: "fab fa-github",
-    hoverColor: "hover:text-red-500",
-  },
-  {
-    href: "https://twitter.com",
-    iconClass: "fab fa-twitter",
-    hoverColor: "hover:text-blue-500",
-  },
-  {
-    href: "https://www.linkedin.com/in/shreevatshanka-dhakal-b35a87176/",
-    iconClass: "fab fa-linkedin",
-    hoverColor: "hover:text-blue-600",
-  },
-];
 
 const ProfileSection = () => {
   const [text, setText] = useState("");
@@ -80,33 +64,37 @@ const ProfileSection = () => {
             </p>
 
             <div className="mt-8 flex space-x-4">
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-primary text-text font-medium rounded-lg hover:bg-primary/90 transition-colors"
-                onClick={() => (window.location.href = "/projects")} // navigate to projects
               >
-                View Projects
-              </motion.button>
+                <Link
+                  to="/projects"
+                  className="px-6 py-3 bg-primary text-text font-medium rounded-lg hover:bg-primary/90 transition-colors inline-block"
+                >
+                  View Projects
+                </Link>
+              </motion.div>
 
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary/10 transition-colors"
-                onClick={() => (window.location.href = "/contact")} // navigate to contact
               >
-                Contact Me
-              </motion.button>
+                <Link
+                  to="/contact"
+                  className="px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary/10 transition-colors inline-block"
+                >
+                  Contact Me
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 
           {/* Main Box Section */}
           <div className="flex-1 flex items-center justify-center z-20 relative px-4 sm:px-8">
             {" "}
-            {/* Added horizontal padding */}
             <div className="main-box bg-secondary p-6 sm:p-8 rounded-lg shadow-md text-center max-w-[90%] sm:max-w-[500px] w-full relative">
               {" "}
-              {/* Adjusted padding and width */}
               {/* Profile Image */}
               <img
                 src={me}
@@ -122,21 +110,21 @@ const ProfileSection = () => {
                   Developer?
                 </p>
                 <p className="text-sm sm:text-base text-text mt-2">
-                  I enjoy doing (insert required job) :D
+                  I enjoy coding :D
                 </p>
               </div>
               {/* Social Icons */}
               <div className="flex justify-center space-x-4 sm:space-x-6 mt-6">
-                {socialLinks.map((link, index) => (
+                {socialLinks.map(({ href, Icon, name }, index) => (
                   <a
                     key={index}
-                    href={link.href}
+                    href={href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="p-2 border rounded-full hover:bg-primary transition"
+                    aria-label={name}
                   >
-                    <i
-                      className={`${link.iconClass} text-xl sm:text-2xl text-text ${link.hoverColor}`}
-                    ></i>
+                    <Icon className="w-5 h-5 text-text" />{" "}
                   </a>
                 ))}
               </div>
@@ -222,11 +210,7 @@ const ProfileSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`text-primary hover:text-secondary text-2xl`}
-                >
-                  <i
-                    className={`${link.iconClass} text-xl text-text ${link.hoverColor}`}
-                  ></i>
-                </a>
+                ></a>
               ))}
             </div>
           </div>

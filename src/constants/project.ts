@@ -11,7 +11,7 @@ export const PROJECTS = [
     id: "project-2",
     title: "Mailo Driver (Game)",
     description: `
-      A driving game made in Unity Engine, featuring a license trial mode.
+      A driving game made in Unity Engine, featuring a map for license trial.
       Worked on map design.
     `,
     link: "https://drive.google.com/drive/folders/1GCVMZWSbKnadJGPOg4WWOKrjS6Gyo4oP?usp=drive_link",
@@ -38,7 +38,7 @@ export const PROJECTS = [
     id: "project-5",
     title: "Portfolio Website",
     description: `
-      A React App to display my portfolio and projects made in React, TypeScript, and Vite.
+      A React App to display my portfolio and projects made in React, TypeScript, and Vite. As i get familiar with more tools and UI, I will update this website.
     `,
     link: "https://github.com/Shreevat/Portfolio",
   },

@@ -1,15 +1,27 @@
-"use client"
+"use client";
 
-import { DndContext, useSensor, useSensors, MouseSensor, type DragEndEvent, TouchSensor } from "@dnd-kit/core"
-import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
-import { useState } from "react"
-import { PROJECTS } from "../constants/project"
-import withLayout from "../hoc/withLayout"
-import SortableItem from "../components/SortableItem"
-import { motion } from "framer-motion"
+import {
+  DndContext,
+  useSensor,
+  useSensors,
+  MouseSensor,
+  type DragEndEvent,
+  TouchSensor,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { useState } from "react";
+import { PROJECTS } from "../constants/project";
+import withLayout from "../hoc/withLayout";
+import SortableItem from "../components/SortableItem";
+import { motion } from "framer-motion";
+import { Tooltip } from "react-tooltip";
 
 function Project() {
-  const [projects, setProjects] = useState(PROJECTS)
+  const [projects, setProjects] = useState(PROJECTS);
 
   // Setup DnD sensors with both mouse and touch support
   const sensors = useSensors(
@@ -23,20 +35,22 @@ function Project() {
         delay: 250,
         tolerance: 5,
       },
-    }),
-  )
+    })
+  );
 
   // Handle drag-and-drop event
   const handleDragEnd = (event: DragEndEvent) => {
-    const { active, over } = event
+    const { active, over } = event;
 
     if (over && active.id !== over.id) {
-      const oldIndex = projects.findIndex((p) => p.id === active.id)
-      const newIndex = projects.findIndex((p) => p.id === over.id)
+      const oldIndex = projects.findIndex((p) => p.id === active.id);
+      const newIndex = projects.findIndex((p) => p.id === over.id);
 
-      setProjects((prevProjects) => arrayMove(prevProjects, oldIndex, newIndex))
+      setProjects((prevProjects) =>
+        arrayMove(prevProjects, oldIndex, newIndex)
+      );
     }
-  }
+  };
 
   return (
     <div className="bg-background py-16 px-4 min-h-screen">
@@ -50,13 +64,20 @@ function Project() {
           <span className="text-primary">Projects</span> I've Worked On
         </h1>
         <p className="text-center text-text mb-8 max-w-2xl mx-auto">
-          Drag and drop to reorder projects based on your interest. Each project represents my skills and experience in
-          different areas of development.
+          Each project represents my skills and experience in different areas of
+          development.
         </p>
 
         <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <SortableContext items={projects.map((project) => project.id)} strategy={verticalListSortingStrategy}>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            data-tooltip-id="send-tooltip"
+            data-tooltip-content="Drag n droppable items, trying things out"
+          >
+            <SortableContext
+              items={projects.map((project) => project.id)}
+              strategy={verticalListSortingStrategy}
+            >
               {projects.map((project, index) => (
                 <SortableItem key={project.id} id={project.id}>
                   <motion.div
@@ -71,8 +92,12 @@ function Project() {
                       </div>
                     </div> */}
                     <div className="p-6">
-                      <h2 className="text-xl font-bold text-text mb-3">{project.title}</h2>
-                      <p className="text-text/80 mb-6 min-h-[80px]">{project.description}</p>
+                      <h2 className="text-xl font-bold text-text mb-3">
+                        {project.title}
+                      </h2>
+                      <p className="text-text/80 mb-6 min-h-[80px]">
+                        {project.description}
+                      </p>
                       {project.link && (
                         <a
                           href={project.link}
@@ -89,6 +114,7 @@ function Project() {
               ))}
             </SortableContext>
           </div>
+          <Tooltip id="send-tooltip" place="bottom" />
         </DndContext>
 
         <div className="text-center mt-12 text-text/70">
@@ -96,9 +122,8 @@ function Project() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
-const ProjectWithLayout = withLayout(Project)
-export default ProjectWithLayout
-
+const ProjectWithLayout = withLayout(Project);
+export default ProjectWithLayout;
