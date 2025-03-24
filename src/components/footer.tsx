@@ -2,14 +2,7 @@
 
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { motion } from "framer-motion"
-
-// These would normally come from your constants file
-const FOOTER_NAVIATION_LINKS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
-]
+import { FOOTER_NAVIATION_LINKS } from "../constants/footer";
 
 const FOOTER_CONTACT = "contact@example.com | (123) 456-7890"
 
