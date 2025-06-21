@@ -18,7 +18,7 @@ const Contact = () => {
           <div
             className="border p-6 rounded-xl shadow-md"
             data-tooltip-id="send-tooltip"
-            data-tooltip-content="Not functional right now"
+            data-tooltip-content="Sorry! Not functional right now"
           >
             <form className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">

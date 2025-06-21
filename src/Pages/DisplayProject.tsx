@@ -21,9 +21,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="startPoint1" className="flex flex-col items-center px-6 lg:px-12 py-16 space-y-6">
-      <h2 className="text-3xl lg:text-4xl font-bold text-text">Game Development Projects</h2>
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl ${isInView ? "animate-fade-in" : ""}`}>
+    <section
+      id="startPoint1"
+      className="flex flex-col items-center px-6 lg:px-12 py-16 space-y-6"
+    >
+      <h2 className="text-3xl lg:text-4xl font-bold text-text">
+        Game Development Projects
+      </h2>
+      <div
+        className={`grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl ${
+          isInView ? "animate-fade-in" : ""
+        }`}
+      >
         {projects.map((project, index) => (
           <div
             key={index}
@@ -31,7 +40,11 @@ const Projects = () => {
             onClick={() => openViewer(project.gif)}
           >
             {/* Project Image - Ensuring it doesn't crop */}
-            <img src={project.gif} alt={project.title} className="w-full h-auto rounded-t-xl" />
+            <img
+              src={project.gif}
+              alt={project.title}
+              className="w-full h-auto rounded-t-xl"
+            />
 
             {/* Overlay Card Description */}
             <div className="bg-background p-4 rounded-b-xl border-t border-border">

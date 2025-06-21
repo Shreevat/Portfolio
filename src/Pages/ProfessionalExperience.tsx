@@ -27,8 +27,7 @@ const EXPERIENCE_DATA: ExperienceItem[] = [
     location: "Kathmandu",
     startDate: "Nov 2025",
     endDate: "Present",
-    description:
-      "Working on the front-end development of a yet undisclosed product",
+    description: "Working on the front-end development of MakeMyScan",
     responsibilities: [
       "Implemented responsive designs using HTML, CSS, and JavaScript",
       "Developed and maintained reusable UI components using Next.js and Tailwind CSS",

@@ -22,7 +22,7 @@ import { Tooltip } from "react-tooltip";
 
 function Project() {
   const [projects, setProjects] = useState(PROJECTS);
-
+  // const [expandedProject, setExpandedProject] = useState<string | null>(null);
   // Setup DnD sensors with both mouse and touch support
   const sensors = useSensors(
     useSensor(MouseSensor, {
@@ -51,6 +51,10 @@ function Project() {
       );
     }
   };
+
+  // const toggleExpand = (id: string) => {
+  //   setExpandedProject(expandedProject === id ? null : id);
+  // };
 
   return (
     <div className="bg-background py-16 px-4 min-h-screen">
@@ -86,15 +90,42 @@ function Project() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="bg-tertiary rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full"
                   >
-                    {/* <div className="h-40 bg-gradient-to-r from-primary/20 to-tertiary flex items-center justify-center">
-                      <div className="w-16 h-16 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-primary">{project.title.charAt(0)}</span>
+                    {/* {project.category === "Professional" && (
+                      <div className="h-40 bg-gray-100 overflow-hidden">
+                        {expandedProject === project.id ? (
+                          <iframe
+                            src={project.link}
+                            className="w-full h-full border-none"
+                            title={`Preview of ${project.title}`}
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                          />
+                        ) : (
+                          <div
+                            className="w-full h-full bg-gradient-to-r from-primary/20 to-tertiary flex items-center justify-center cursor-pointer"
+                            onClick={() => toggleExpand(project.id)}
+                          >
+                            <span className="text-sm font-medium text-gray-700">
+                              Click to show preview
+                            </span>
+                          </div>
+                        )}
                       </div>
-                    </div> */}
+                    )} */}
                     <div className="p-6">
-                      <h2 className="text-xl font-bold text-text mb-3">
-                        {project.title}
-                      </h2>
+                      <div className="flex items-center justify-between mb-3">
+                        <h2 className="text-xl font-bold text-text mb-3">
+                          {project.title}
+                        </h2>
+                        <span
+                          className={`px-3 py-1 text-xs font-semibold rounded-full ${
+                            project.category === "Personal"
+                              ? "bg-blue-500 text-white"
+                              : "bg-green-500 text-white"
+                          }`}
+                        >
+                          {project.category}
+                        </span>
+                      </div>
                       <p className="text-text/80 mb-6 min-h-[80px]">
                         {project.description}
                       </p>

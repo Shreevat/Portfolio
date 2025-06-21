@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { socialLinks } from "../constants/socialinks"
-import me from "../assets/Images/Me.jpg"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { socialLinks } from "../constants/socialinks";
+import me from "../assets/Images/Me.jpg";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ProfileSection = () => {
-  const [text, setText] = useState("")
-  const [index, setIndex] = useState(0)
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const phrases = ["a Frontend Developer", "a Creative Coder"]
+    const phrases = ["a Frontend Developer", "a Creative Coder"];
     const timer = setTimeout(() => {
-      setText(phrases[index].substring(0, text.length + 1))
+      setText(phrases[index].substring(0, text.length + 1));
 
       if (text.length === phrases[index].length) {
         setTimeout(() => {
-          setText("")
-          setIndex((index + 1) % phrases.length)
-        }, 2000)
+          setText("");
+          setIndex((index + 1) % phrases.length);
+        }, 2000);
       }
-    }, 100)
+    }, 100);
 
-    return () => clearTimeout(timer)
-  }, [text, index])
+    return () => clearTimeout(timer);
+  }, [text, index]);
 
   return (
     <div className="relative my-auto min-h-screen overflow-hidden flex justify-center items-center">
       {/* Profile Section */}
       <div className="relative h-screen bg-background overflow-hidden flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 w-full">
         {/* Glowing Element */}
-        <div className="absolute bg-secondary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px] left-1/4 transform -translate-x-1/2 animate-shadow-slide z-10"></div>
+        <div className="absolute bg-primary mx-auto rounded-3xl blur-3xl w-[260px] h-[280px] top-[200px] left-1/4 transform -translate-x-1/2 animate-shadow-slide z-10"></div>
 
         <motion.div
           className="w-full md:w-1/2 mb-12 md:mb-0 text-center md:text-left"
@@ -49,8 +49,8 @@ const ProfileSection = () => {
             </h2>
           </div>
           <p className="text-text text-base sm:text-lg md:text-xl max-w-lg mx-auto md:mx-0 mt-4 pt-2">
-            Passionate about creating beautiful, responsive, and user-friendly web experiences that solve real-world
-            problems.
+            Passionate about creating beautiful, responsive, and user-friendly
+            web experiences that solve real-world problems.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
@@ -85,9 +85,13 @@ const ProfileSection = () => {
             />
             {/* Developer Info */}
             <div className="mt-14 sm:mt-16">
-              <h2 className="text-xl sm:text-2xl font-bold text-text">Shreevatshanka Dhakal</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-text">
+                Shreevatshanka Dhakal
+              </h2>
               <p className="text-sm sm:text-base text-text mt-2">Developer?</p>
-              <p className="text-sm sm:text-base text-text mt-2">I enjoy coding :D</p>
+              <p className="text-sm sm:text-base text-text mt-2">
+                I enjoy coding :D
+              </p>
             </div>
             {/* Social Icons */}
             <div className="flex justify-center space-x-4 sm:space-x-6 mt-6">
@@ -108,8 +112,7 @@ const ProfileSection = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileSection
-
+export default ProfileSection;

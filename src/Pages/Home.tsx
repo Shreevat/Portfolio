@@ -1,15 +1,28 @@
-import type React from "react"
+import type React from "react";
 // src/Pages/Home.tsx
 
-import Profile from "./HeroSection"
-import About from "../components/About"
-import Skills from "../components/skillSection"
-import ProfessionalExperience from "./ProfessionalExperience"
-import Projects from "./DisplayProject"
+import Profile from "./HeroSection";
+import About from "../components/About";
+import Skills from "../components/skillSection";
+import ProfessionalExperience from "./ProfessionalExperience";
+import Projects from "./DisplayProject";
 
-import { FaReact, FaHtml5, FaCss3, FaNodeJs, FaJs, FaGitAlt } from "react-icons/fa"
-import { SiTailwindcss, SiUnity, SiTypescript } from "react-icons/si"
-import withLayout from "../hoc/withLayout"
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaNodeJs,
+  FaJs,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiUnity,
+  SiTypescript,
+  SiWordpress,
+  SiFigma,
+} from "react-icons/si";
+import withLayout from "../hoc/withLayout";
 
 const Home: React.FC = () => {
   const skills = [
@@ -49,7 +62,15 @@ const Home: React.FC = () => {
       icon: <SiTypescript size={24} />,
       name: "Typescript",
     },
-  ]
+    {
+      icon: <SiWordpress size={24} />,
+      name: "Wordpress",
+    },
+    {
+      icon: <SiFigma size={24} />,
+      name: "Figma",
+    },
+  ];
 
   return (
     <>
@@ -59,10 +80,9 @@ const Home: React.FC = () => {
       <ProfessionalExperience />
       <Projects />
     </>
-  )
-}
+  );
+};
 
-const HomeWithLayout = withLayout(Home)
+const HomeWithLayout = withLayout(Home);
 
-export default HomeWithLayout
-
+export default HomeWithLayout;
